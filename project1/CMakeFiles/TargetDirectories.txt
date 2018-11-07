@@ -1,0 +1,3 @@
+/home/spare/Facultate/IEP/project1/CMakeFiles/rebuild_cache.dir
+/home/spare/Facultate/IEP/project1/CMakeFiles/testl.dir
+/home/spare/Facultate/IEP/project1/CMakeFiles/edit_cache.dir
