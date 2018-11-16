@@ -1,46 +1,35 @@
-#include <iostream>
 
-using namespace std;
-
-    class Complex {
-        public:
-        double r; //real part
-        double i; //imaginary part
-        public:
-        void add(Complex, Complex);
-        void subtract(Complex, Complex);
-        void print();
-    };
-
-    void Complex::add (Complex op1, Complex op2) {
-        r = op1.r + op2.r;
-        i = op1.i + op2.i;
+#include<iostream> 
+using namespace std; 
+  
+class Complex { 
+private: 
+    int real, imag; 
+public: 
+    Complex(int r = 0, int i =0)  {real = r;   imag = i;} 
+      
+    // This is automatically called when '+' is used with 
+    // between two Complex objects 
+    Complex operator + (Complex const &obj) { 
+         Complex res; 
+         res.real = real + obj.real; 
+         res.imag = imag + obj.imag; 
+         return res; 
+    } 
+    Complex operator - (Complex const &obj) { 
+         Complex res; 
+         res.real = real - obj.real; 
+         res.imag = imag - obj.imag; 
+         return res; 
     }
-
-    void Complex::subtract (Complex op1, Complex op2) {
-         r = op1.r - op2.r;
-         i = op1.i - op2.i;
-    }
-
-    void Complex::print () {
-        cout << "("<<r<<", " << i <<")";
-    }
-
-    int main () {
-        Complex operand1, operand2, result;
-        cout << "\nInput real part for operand one: " << endl;
-        cin >> operand1.r;
-        cout << "Input imaginary part for operand one: " << endl;
-        cin >> operand1.i;
-        cout << "Input real part for operand two: " << endl;
-        cin >> operand2.r;
-        cout << "Input imaginary part for operand two: " << endl;
-        cin >> operand2.i;
-        cout << "\nThe sum is ";
-        result.add(operand1, operand2);
-        result.print();
-        cout << "\nThe difference is ";
-        result.subtract(operand1, operand2);
-        result.print();
-        return 0;
-    }
+    void print() { cout << real << " + i" << imag << endl; } 
+}; 
+  
+int main() 
+{ 
+    Complex c1(10, 5), c2(2, 4); 
+    Complex c3 = c1 + c2; 
+    c3.print(); 
+    c3 = c1 - c2;
+    c3.print(); 
+} 
