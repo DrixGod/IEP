@@ -8,4 +8,3 @@ add_executable(myapp app.cpp)
 
 target_link_libraries(myapp testl)
 
-#install(TARGETS myapp DESTINATION bin)
